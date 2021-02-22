@@ -52,6 +52,7 @@ const CountriesDropdown = ({ onChange, onLoad, ...props }) => {
             {loading && <Span><Spinner></Spinner></Span>}
             {error && <Span>{error}</Span>}
             {!loading && !error && countries && <div style={{ width: "450px" }}><Dropdown options={countries} onChange={(event) => onDropdownChangeHandler(event)} {...props}></Dropdown ></div>}
+
         </>
     )
 }
