@@ -8,7 +8,6 @@ import promiseRetry from "promise-retry";
 const CountriesDropdown = ({ onChange, onLoad, ...props }) => {
     const [countries, setCountries] = useState();
     const [loading, setLoading] = useState();
-    const [loadingMessage, setLoadingMessage] = useState("Loading");
     const [error, setError] = useState()
 
     useEffect(() => {
@@ -18,10 +17,6 @@ const CountriesDropdown = ({ onChange, onLoad, ...props }) => {
             if (number === 1) {
                 setLoading(true)
             }
-
-            setLoadingMessage(prev => (
-                prev.concat('.')
-            ))
 
             return promisedCountries()
                 .catch(retry);
